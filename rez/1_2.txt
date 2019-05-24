@@ -1,0 +1,56 @@
+a || eilutes: 1 3 5 9 11 13 17 27 29 
+and || eilutes: 1 9 11 23 31 
+are || eilutes: 11 17 
+as || eilutes: 3 9 19 
+be || eilutes: 5 7 11 17 29 
+been || eilutes: 1 19 31 
+best || eilutes: 1 13 
+brexit || eilutes: 1 15 
+but || eilutes: 13 21 23 
+by || eilutes: 5 27 
+can || eilutes: 13 17 
+conservative || eilutes: 3 27 31 
+contest || eilutes: 3 9 11 27 
+country || eilutes: 13 23 
+deliver || eilutes: 1 15 
+do || eilutes: 1 23 
+done || eilutes: 1 13 
+down || eilutes: 9 27 
+end || eilutes: 5 27 29 
+for || eilutes: 11 13 27 
+had || eilutes: 1 9 11 13 23 31 
+have || eilutes: 15 23 
+her || eilutes: 1 13 15 19 25 
+i || eilutes: 13 19 23 
+in || eilutes: 1 5 13 15 27 
+it || eilutes: 1 5 7 13 19 
+jeremy || eilutes: 11 31 
+july || eilutes: 5 29 
+june || eilutes: 7 9 27 
+leader || eilutes: 5 9 31 
+leadership || eilutes: 3 9 11 27 
+may || eilutes: 3 7 9 13 25 
+minister || eilutes: 7 13 21 
+mrs || eilutes: 3 7 9 13 19 
+new || eilutes: 5 13 
+now || eilutes: 13 31 
+of || eilutes: 1 5 7 9 13 17 19 27 29 
+on || eilutes: 9 11 17 
+party || eilutes: 5 11 27 29 31 
+place || eilutes: 3 5 
+prime || eilutes: 7 13 21 
+said || eilutes: 1 3 5 13 17 27 31 
+serve || eilutes: 3 23 
+she || eilutes: 1 3 9 13 15 17 19 31 
+so || eilutes: 1 23 
+statement || eilutes: 1 13 27 
+that || eilutes: 1 9 11 13 15 19 27 31 
+the || eilutes: 5 7 9 11 13 17 19 21 23 27 29 31 
+those || eilutes: 17 29 
+to || eilutes: 1 3 7 11 13 15 17 19 23 27 29 31 
+tory || eilutes: 9 
+was || eilutes: 1 13 27 31 
+week || eilutes: 9 27 
+will || eilutes: 7 19 23 
+with || eilutes: 9 13 23 27 
+would || eilutes: 3 9 11 15 27 29 

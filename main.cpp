@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <limits>
 #include "task.h"
 
@@ -14,18 +15,28 @@ int int_ivestis() {
 	return kint;
 }
 
+bool ar_failas_egzistuoja(std::string pav) {
+	std::ifstream in(pav);
+	bool retVal = in.good();
+	in.close();
+	return retVal;
+}
+
 int main() {
 	task obj;
 	int pasirink;
 	bool power = true;
 	std::string in;
 	while (power) {
-		std::cout << "1. Skaiciuoti zodzius\n2. Skaiciuoti zodzius ir eilutes\n3. Rasti URL adresus\n4. Iseiti\n:";
+		std::cout << "1. Pasikartojanciu zodziu paieska.\n2. Pasikartojanciu zodziu paieska eilutese\n3. URL adresu paieska\n4. Iseiti\n:";
 		pasirink = int_ivestis();
 		while (pasirink < 1 || pasirink > 4) {
 			pasirink = int_ivestis();
 		}
 		std::cout << "Ivesties failas: "; std::cin >> in;
+		while (!ar_failas_egzistuoja("./duom/" + in)) {
+			std::cout << "Failas neegzistuoja. Iveskite tinkama pavadinima: "; std::cin >> in;
+		}
 		switch (pasirink) {
 		case 1:
 			obj.scanFile_1(in);
@@ -42,7 +53,8 @@ int main() {
 		default:
 			break;
 		}
-		std::cout << "\nRezultatai isvesti i: ./rez/" << in << std::endl << std::endl;
+		if (pasirink != 4)
+			std::cout << "\nRezultatai isvesti i: ./rez/" << in.substr(0, in.find(".")) << "_" << pasirink << ".txt" << std::endl << std::endl;
 	}
 
 	return 0;

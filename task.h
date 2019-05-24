@@ -9,6 +9,7 @@ class task {
 private:
 	std::map<std::string, unsigned int> wordsCount;
 	std::map<std::string, std::vector<int>> occurranceAtLines;
+	std::vector<std::string> url;
 
 	void processLine_1(std::string);
 	void processLine_2(std::string, const int&);
@@ -20,6 +21,7 @@ private:
 
 	void clearObject();
 
+	void myErase(std::string&, unsigned int&);
 public:
 	task() {}
 	~task() {}
