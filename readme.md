@@ -1,6 +1,6 @@
 https://www.bbc.com/news/uk-politics-48395905
 
-#Frazių paieška
+# Frazių paieška
 
 
 ### Naudojimosi instrukcijos
@@ -18,4 +18,4 @@ https://www.bbc.com/news/uk-politics-48395905
 
 Duomenu failai sukurti pagal [straipsni](https://www.bbc.com/news/uk-politics-48395905).
 
-Releasas
+[Releasas](https://github.com/d1j/OBJ-5uzd/releases/tag/v1.0)
