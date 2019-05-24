@@ -18,7 +18,7 @@ int main() {
 	task obj;
 	int pasirink;
 	bool power = true;
-	std::string in, out;
+	std::string in;
 	while (power) {
 		std::cout << "1. Skaiciuoti zodzius\n2. Skaiciuoti zodzius ir eilutes\n3. Rasti URL adresus\n4. Iseiti\n:";
 		pasirink = int_ivestis();
@@ -26,16 +26,15 @@ int main() {
 			pasirink = int_ivestis();
 		}
 		std::cout << "Ivesties failas: "; std::cin >> in;
-		std::cout << "ISvesties failas: "; std::cin >> out;
 		switch (pasirink) {
 		case 1:
-			obj.scanFile_1(in, out);
+			obj.scanFile_1(in);
 			break;
 		case 2:
-			obj.scanFile_2(in, out);
+			obj.scanFile_2(in);
 			break;
 		case 3:
-			obj.scanFile_3(in, out);
+			obj.scanFile_3(in);
 			break;
 		case 4:
 			power = false;
@@ -43,7 +42,7 @@ int main() {
 		default:
 			break;
 		}
-		std::cout << "\nRezultatai isvesti i: " << out << std::endl << std::endl;
+		std::cout << "\nRezultatai isvesti i: ./rez/" << in << std::endl << std::endl;
 	}
 
 	return 0;

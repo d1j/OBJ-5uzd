@@ -43,7 +43,7 @@ void task::processLine_1(std::string line) {
 	}
 }
 
-void task::scanFile_1(const std::string& in, const std::string& out) {
+void task::scanFile_1(const std::string& in) {
 	std::ifstream input("./duom/" + in);
 	while (!input.eof()) {
 		std::string a;
@@ -52,7 +52,7 @@ void task::scanFile_1(const std::string& in, const std::string& out) {
 	}
 	input.close();
 
-	writeResults_1(out);
+	writeResults_1(in);
 
 	clearObject();
 }
@@ -65,23 +65,80 @@ void task::writeResults_1(const std::string& out) {
 	output.close();
 }
 
-void task::processLine_2(std::string line) {
+void task::processLine_2(std::string line, const int& count) {
+	line.erase(std::remove_if(line.begin(), line.end(), pred), line.end());
+	std::transform(line.begin(), line.end(), line.begin(), ::tolower);
+	while (line.length() != 0) {
+		auto pos = line.find(' ');
+		if (pos == std::string::npos) {
+			if (wordsCount.find(line) == wordsCount.end())
+				wordsCount[line] = 1;
+			else
+				wordsCount[line]++;
+			if (occurranceAtLines.find(line) == occurranceAtLines.end()) {
+				occurranceAtLines[line].push_back(count);
+			} else {
+				if (occurranceAtLines[line].back() != count)
+					occurranceAtLines[line].push_back(count);
+			}
+			line.clear();
+		} else {
+			auto sub = line.substr(0, pos);
+			if (wordsCount.find(sub) == wordsCount.end())
+				wordsCount[sub] = 1;
+			else
+				wordsCount[sub]++;
+			line.erase(0, pos);
+			while (line[0] == ' ') {
+				line.erase(0, 1);
+			}
+			if (occurranceAtLines.find(sub) == occurranceAtLines.end()) {
+				occurranceAtLines[sub].push_back(count);
+			} else {	
+				if (occurranceAtLines[sub].back() != count)
+					occurranceAtLines[sub].push_back(count);
+			}
 
+		}
+	}
+}
+
+void task::scanFile_2(const std::string& in) {
+	std::ifstream input("./duom/" + in);
+	int count = 1;
+	while (!input.eof()) {
+		std::string a;
+		std::getline(input, a);
+		processLine_2(a, count++);
+	}
+	input.close();
+
+	writeResults_2(in);
+
+	clearObject();
+}
+
+void task::writeResults_2(const std::string& out) {
+	std::ofstream output("./rez/" + out);
+	auto q = occurranceAtLines.begin();
+	for (auto p = wordsCount.begin(); p != wordsCount.end(); p++) {
+		if (p->second > 1) {
+			output << p->first << ": " << p->second <<  " || eilutes: ";
+			for (auto i = 0; i < q->second.size(); ++i) {
+				output << q->second[i] << " ";
+			}
+			output << std::endl;
+		}
+		q++;
+	}
+	output.close();
 }
 
 void task::processLine_3(std::string line) {
 
 }
 
-void task::scanFile_2(const std::string& in, const std::string& out) {
-
-}
-
-void task::scanFile_3(const std::string& in, const std::string& out) {
-
-}
-
-void task::writeResults_2(const std::string& out) {
+void task::scanFile_3(const std::string& in) {
 
 }
 
