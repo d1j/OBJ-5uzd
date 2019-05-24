@@ -1,0 +1,10 @@
+a: 3
+had: 2
+in: 2
+it: 2
+of: 2
+place: 2
+said: 3
+she: 4
+the: 2
+to: 3
